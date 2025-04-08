@@ -1,0 +1,288 @@
+:root {
+  --primary-color: #3465A4;  /* Linux blue */
+  --secondary-color: #f5f5f5;
+  --text-color: #333;
+  --shadow-color: rgba(163, 177, 198, 0.5);
+  --highlight-color: rgba(255, 255, 255, 0.8);
+  --background-color: #ecf0f3;
+  --accent-color: #73d216;   /* Linux green */
+  --orange-accent: #E95420;  /* Ubuntu orange */
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.tux-logo {
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(5deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+.quiz-container, .result-container {
+  background: var(--background-color);
+  border-radius: 20px;
+  box-shadow: 10px 10px 20px var(--shadow-color), 
+             -10px -10px 20px var(--highlight-color);
+  padding: 40px;
+  margin-bottom: 30px;
+  transition: all 0.3s ease;
+}
+
+.quiz-container:hover, .result-container:hover {
+  box-shadow: 15px 15px 25px var(--shadow-color), 
+             -15px -15px 25px var(--highlight-color);
+}
+
+.question-card {
+  background: var(--background-color);
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: inset 5px 5px 10px var(--shadow-color), 
+             inset -5px -5px 10px var(--highlight-color);
+  margin-bottom: 20px;
+}
+
+.question-title {
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: var(--primary-color);
+  transition: all 0.4s ease;
+  opacity: 0;
+  animation: fadeIn 0.5s forwards ease-out 0.2s;
+}
+
+.option-btn {
+  width: 100%;
+  background: var(--background-color);
+  border: none;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 10px;
+  text-align: left;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 5px 5px 10px var(--shadow-color), 
+             -5px -5px 10px var(--highlight-color);
+  opacity: 0;
+  animation: slideInRight 0.5s forwards ease-out;
+}
+
+.option-btn:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.option-btn:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.option-btn:hover {
+  box-shadow: inset 2px 2px 5px var(--shadow-color), 
+             inset -2px -2px 5px var(--highlight-color);
+  transform: scale(0.98);
+}
+
+.option-btn.selected {
+  background: var(--primary-color);
+  color: white;
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.2), 
+             inset -2px -2px 5px rgba(255, 255, 255, 0.1);
+  transform: scale(0.98);
+}
+
+.btn {
+  border-radius: 10px;
+  padding: 10px 30px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 5px 5px 10px var(--shadow-color), 
+             -5px -5px 10px var(--highlight-color);
+  margin: 0.5rem 0.5rem;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 7px 7px 15px var(--shadow-color), 
+             -7px -7px 15px var(--highlight-color);
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  border: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-color);
+}
+
+.progress-container {
+  position: relative;
+  padding: 5px;
+}
+
+.progress {
+  height: 10px;
+  background-color: var(--background-color);
+  box-shadow: inset 2px 2px 5px var(--shadow-color), 
+             inset -2px -2px 5px var(--highlight-color);
+  border-radius: 10px;
+}
+
+.progress-bar {
+  background-color: var(--primary-color);
+  border-radius: 10px;
+  transition: width 0.5s ease;
+}
+
+.step-counter {
+  position: absolute;
+  right: 10px;
+  top: -20px;
+  font-size: 0.9rem;
+  color: var(--primary-color);
+  font-weight: 500;
+}
+
+.distro-card {
+  text-align: center;
+}
+
+#distro-logo img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+}
+
+#distro-name {
+  font-weight: 600;
+  color: var(--primary-color);
+  margin: 15px 0;
+  animation: fadeInUp 0.8s forwards;
+}
+
+#distro-description {
+  color: var(--text-color);
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+  animation: fadeInUp 0.8s forwards 0.2s;
+  opacity: 0;
+}
+
+.intro-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--background-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.intro-content {
+  text-align: center;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 10px 10px 20px var(--shadow-color), 
+             -10px -10px 20px var(--highlight-color);
+  max-width: 600px;
+  width: 90%;
+}
+
+.tux-intro {
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));
+  opacity: 0;
+  transform: scale(0.5);
+  animation: tuxAppear 1.5s forwards ease-out;
+  max-width: 150px;
+  height: auto;
+}
+
+.intro-message {
+  font-weight: 600;
+  color: var(--primary-color);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s forwards ease-out 1s;
+}
+
+.credits {
+  margin-top: 2rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s forwards ease-out 2s;
+}
+
+.credits p {
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+}
+
+.credits h3 {
+  font-weight: 500;
+  color: var(--primary-color);
+}
+
+.start-btn {
+  margin-top: 2rem;
+  padding: 10px 40px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s forwards ease-out 2.5s;
+}
+
+@keyframes tuxAppear {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) rotate(-10deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(1.2); }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes slideInRight {
+  0% { opacity: 0; transform: translateX(-20px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInLeft {
+  0% { opacity: 0; transform: translateX(20px); }
+  100% { opacity: 1; transform: translateX(0); }
+}

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>escolhas</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <header class="text-center my-5">
+      <a href="index.html">
+        <img class="tux-logo" src="https://www.pngplay.com/wp-content/uploads/13/Linux-Logo-Transparent-PNG.png" alt="Linux Logo" width="80" height="80">
+      </a>
+      <h1 class="display-4 mt-3">Banco de Dados de Distribuições Linux</h1>
+      <p class="lead">Todas as distribuições disponíveis para recomendação</p>
+    </header>
+
+    <div class="row justify-content-center">
+      <div class="col-md-10">
+        <div class="info-container mb-4">
+          <h2 class="text-primary mb-4">Lista de Distribuições</h2>
+          <p class="mb-4">Esta página contém todas as distribuições Linux e suas características para recomendação pelo sistema.</p>
+          
+          <script>
+            // tabela verdade + respostas. 
+            const distros = [
+  {Segurança:"V", Jogar:"V", Leve:"V", "Open-Source":"V", Estabilidade:"V", Experiência:"V", distro:"Ubuntu"},
+  {Segurança:"V", Jogar:"V", Leve:"V", "Open-Source":"V", Estabilidade:"V", Experiência:"F", distro:"Debian"},
+  {Segurança:"V", Jogar:"V", Leve:"V", "Open-Source":"V", Estabilidade:"F", Experiência:"V", distro:"Arch Linux"},
+  {Segurança:"V", Jogar:"V", Leve:"V", "Open-Source":"V", Estabilidade:"F", Experiência:"F", distro:"Fedora"},
+  {Segurança:"V", Jogar:"V", Leve:"V", "Open-Source":"F", Estabilidade:"V", Experiência:"V", distro:"Pop!_OS"},
+  {Segurança:"V", Jogar:"V", Leve:"V", "Open-Source":"F", Estabilidade:"V", Experiência:"F", distro:"Manjaro"},
+  {Segurança:"V", Jogar:"V", Leve:"V", "Open-Source":"F", Estabilidade:"F", Experiência:"V", distro:"Kali Linux"},
+  {Segurança:"V", Jogar:"V", Leve:"V", "Open-Source":"F", Estabilidade:"F", Experiência:"F", distro:"Alpine Linux"},
+  {Segurança:"V", Jogar:"V", Leve:"F", "Open-Source":"V", Estabilidade:"V", Experiência:"V", distro:"Slackware"},
+  {Segurança:"V", Jogar:"V", Leve:"F", "Open-Source":"V", Estabilidade:"V", Experiência:"F", distro:"Gentoo"},
+  {Segurança:"V", Jogar:"V", Leve:"F", "Open-Source":"V", Estabilidade:"F", Experiência:"V", distro:"OpenSUSE"},
+  {Segurança:"V", Jogar:"V", Leve:"F", "Open-Source":"V", Estabilidade:"F", Experiência:"F", distro:"Zorin OS"},
+  {Segurança:"V", Jogar:"V", Leve:"F", "Open-Source":"F", Estabilidade:"V", Experiência:"V", distro:"MX Linux"},
+  {Segurança:"V", Jogar:"V", Leve:"F", "Open-Source":"F", Estabilidade:"V", Experiência:"F", distro:"EndeavourOS"},
+  {Segurança:"V", Jogar:"V", Leve:"F", "Open-Source":"F", Estabilidade:"F", Experiência:"V", distro:"Parrot OS"},
+  {Segurança:"V", Jogar:"V", Leve:"F", "Open-Source":"F", Estabilidade:"F", Experiência:"F", distro:"Void Linux"},
+  {Segurança:"V", Jogar:"F", Leve:"V", "Open-Source":"V", Estabilidade:"V", Experiência:"V", distro:"Ubuntu"},
+  {Segurança:"V", Jogar:"F", Leve:"V", "Open-Source":"V", Estabilidade:"V", Experiência:"F", distro:"Debian"},
+  {Segurança:"V", Jogar:"F", Leve:"V", "Open-Source":"V", Estabilidade:"F", Experiência:"V", distro:"Arch Linux"},
+  {Segurança:"V", Jogar:"F", Leve:"V", "Open-Source":"V", Estabilidade:"F", Experiência:"F", distro:"Fedora"},
+  {Segurança:"V", Jogar:"F", Leve:"V", "Open-Source":"F", Estabilidade:"V", Experiência:"V", distro:"Pop!_OS"},
+  {Segurança:"V", Jogar:"F", Leve:"V", "Open-Source":"F", Estabilidade:"V", Experiência:"F", distro:"Manjaro"},
+  {Segurança:"V", Jogar:"F", Leve:"V", "Open-Source":"F", Estabilidade:"F", Experiência:"V", distro:"Kali Linux"},
+  {Segurança:"V", Jogar:"F", Leve:"V", "Open-Source":"F", Estabilidade:"F", Experiência:"F", distro:"Alpine Linux"},
+  {Segurança:"V", Jogar:"F", Leve:"F", "Open-Source":"V", Estabilidade:"V", Experiência:"V", distro:"Slackware"},
+  {Segurança:"V", Jogar:"F", Leve:"F", "Open-Source":"V", Estabilidade:"V", Experiência:"F", distro:"Gentoo"},
+  {Segurança:"V", Jogar:"F", Leve:"F", "Open-Source":"V", Estabilidade:"F", Experiência:"V", distro:"OpenSUSE"},
+  {Segurança:"V", Jogar:"F", Leve:"F", "Open-Source":"V", Estabilidade:"F", Experiência:"F", distro:"Zorin OS"},
+  {Segurança:"V", Jogar:"F", Leve:"F", "Open-Source":"F", Estabilidade:"V", Experiência:"V", distro:"MX Linux"},
+  {Segurança:"V", Jogar:"F", Leve:"F", "Open-Source":"F", Estabilidade:"V", Experiência:"F", distro:"EndeavourOS"},
+  {Segurança:"V", Jogar:"F", Leve:"F", "Open-Source":"F", Estabilidade:"F", Experiência:"V", distro:"Parrot OS"},
+  {Segurança:"V", Jogar:"F", Leve:"F", "Open-Source":"F", Estabilidade:"F", Experiência:"F", distro:"Void Linux"},
+  {Segurança:"F", Jogar:"V", Leve:"V", "Open-Source":"V", Estabilidade:"V", Experiência:"V", distro:"Ubuntu"},
+  {Segurança:"F", Jogar:"V", Leve:"V", "Open-Source":"V", Estabilidade:"V", Experiência:"F", distro:"Debian"},
+  {Segurança:"F", Jogar:"V", Leve:"V", "Open-Source":"V", Estabilidade:"F", Experiência:"V", distro:"Arch Linux"},
+  {Segurança:"F", Jogar:"V", Leve:"V", "Open-Source":"V", Estabilidade:"F", Experiência:"F", distro:"Fedora"},
+  {Segurança:"F", Jogar:"V", Leve:"V", "Open-Source":"F", Estabilidade:"V", Experiência:"V", distro:"Pop!_OS"},
+  {Segurança:"F", Jogar:"V", Leve:"V", "Open-Source":"F", Estabilidade:"V", Experiência:"F", distro:"Manjaro"},
+  {Segurança:"F", Jogar:"V", Leve:"V", "Open-Source":"F", Estabilidade:"F", Experiência:"V", distro:"Kali Linux"},
+  {Segurança:"F", Jogar:"V", Leve:"V", "Open-Source":"F", Estabilidade:"F", Experiência:"F", distro:"Alpine Linux"},
+  {Segurança:"F", Jogar:"V", Leve:"F", "Open-Source":"V", Estabilidade:"V", Experiência:"V", distro:"Slackware"},
+  {Segurança:"F", Jogar:"V", Leve:"F", "Open-Source":"V", Estabilidade:"V", Experiência:"F", distro:"Gentoo"},
+  {Segurança:"F", Jogar:"V", Leve:"F", "Open-Source":"V", Estabilidade:"F", Experiência:"V", distro:"OpenSUSE"},
+  {Segurança:"F", Jogar:"V", Leve:"F", "Open-Source":"V", Estabilidade:"F", Experiência:"F", distro:"Zorin OS"},
+  {Segurança:"F", Jogar:"V", Leve:"F", "Open-Source":"F", Estabilidade:"V", Experiência:"V", distro:"MX Linux"},
+  {Segurança:"F", Jogar:"V", Leve:"F", "Open-Source":"F", Estabilidade:"V", Experiência:"F", distro:"EndeavourOS"},
+  {Segurança:"F", Jogar:"V", Leve:"F", "Open-Source":"F", Estabilidade:"F", Experiência:"V", distro:"Parrot OS"},
+  {Segurança:"F", Jogar:"V", Leve:"F", "Open-Source":"F", Estabilidade:"F", Experiência:"F", distro:"Void Linux"},
+  {Segurança:"F", Jogar:"F", Leve:"V", "Open-Source":"V", Estabilidade:"V", Experiência:"V", distro:"Ubuntu"},
+  {Segurança:"F", Jogar:"F", Leve:"V", "Open-Source":"V", Estabilidade:"V", Experiência:"F", distro:"Debian"},
+  {Segurança:"F", Jogar:"F", Leve:"V", "Open-Source":"V", Estabilidade:"F", Experiência:"V", distro:"Arch Linux"},
+  {Segurança:"F", Jogar:"F", Leve:"V", "Open-Source":"V", Estabilidade:"F", Experiência:"F", distro:"Fedora"},
+  {Segurança:"F", Jogar:"F", Leve:"V", "Open-Source":"F", Estabilidade:"V", Experiência:"V", distro:"Pop!_OS"},
+  {Segurança:"F", Jogar:"F", Leve:"V", "Open-Source":"F", Estabilidade:"V", Experiência:"F", distro:"Manjaro"},
+  {Segurança:"F", Jogar:"F", Leve:"V", "Open-Source":"F", Estabilidade:"F", Experiência:"V", distro:"Kali Linux"},
+  {Segurança:"F", Jogar:"F", Leve:"V", "Open-Source":"F", Estabilidade:"F", Experiência:"F", distro:"Alpine Linux"},
+  {Segurança:"F", Jogar:"F", Leve:"F", "Open-Source":"V", Estabilidade:"V", Experiência:"V", distro:"Slackware"},
+  {Segurança:"F", Jogar:"F", Leve:"F", "Open-Source":"V", Estabilidade:"V", Experiência:"F", distro:"Gentoo"},
+  {Segurança:"F", Jogar:"F", Leve:"F", "Open-Source":"V", Estabilidade:"F", Experiência:"V", distro:"OpenSUSE"},
+  {Segurança:"F", Jogar:"F", Leve:"F", "Open-Source":"V", Estabilidade:"F", Experiência:"F", distro:"Zorin OS"},
+  {Segurança:"F", Jogar:"F", Leve:"F", "Open-Source":"F", Estabilidade:"V", Experiência:"V", distro:"MX Linux"},
+  {Segurança:"F", Jogar:"F", Leve:"F", "Open-Source":"F", Estabilidade:"V", Experiência:"F", distro:"EndeavourOS"},
+  {Segurança:"F", Jogar:"F", Leve:"F", "Open-Source":"F", Estabilidade:"F", Experiência:"V", distro:"Parrot OS"},
+  {Segurança:"F", Jogar:"F", Leve:"F", "Open-Source":"F", Estabilidade:"F", Experiência:"F", distro:"Void Linux"}
+];
+
+
+            // Criar a tabela
+            const tabela = document.createElement('table');
+            tabela.className = 'table table-striped table-hover';
+            
+            // Cabeçalho
+            const thead = document.createElement('thead');
+            thead.innerHTML = `
+              <tr>
+                <th>Distribuição</th>
+                <th>Segurança</th>
+                <th>Jogos</th>
+                <th>Leve</th>
+                <th>Open-Source</th>
+                <th>Estabilidade</th>
+                <th>Experiência</th>
+                <th>Descrição</th>
+              </tr>
+            `;
+            tabela.appendChild(thead);
+            
+            // Corpo da tabela
+            const tbody = document.createElement('tbody');
+            
+            distros.forEach(distro => {
+              const tr = document.createElement('tr');
+              tr.innerHTML = `
+                <td>
+                  <div style="display: flex; align-items: center;">
+                    <div style="width: 30px; height: 30px; margin-right: 10px; overflow: hidden;">${distro.logo}</div>
+                    <strong>${distro.distro}</strong>
+                  </div>
+                </td>
+                <td>${distro.Segurança === 'V' ? '✅' : '❌'}</td>
+                <td>${distro.Jogar === 'V' ? '✅' : '❌'}</td>
+                <td>${distro.Leve === 'V' ? '✅' : '❌'}</td>
+                <td>${distro['Open-Source'] === 'V' ? '✅' : '❌'}</td>
+                <td>${distro.Estabilidade === 'V' ? '✅' : '❌'}</td>
+                <td>${distro.Experiência === 'V' ? '✅' : '❌'}</td>
+                <td>${distro.description}</td>
+              `;
+              tbody.appendChild(tr);
+            });
+            
+            tabela.appendChild(tbody);
+            document.querySelector('.info-container').appendChild(tabela);
+          </script>
+          
+          <div class="text-center mt-5 mb-5">
+            <a href="index.html" class="btn btn-primary">Voltar para o Quiz</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .info-container {
+      background: var(--background-color);
+      border-radius: 20px;
+      box-shadow: 10px 10px 20px var(--shadow-color), 
+                 -10px -10px 20px var(--highlight-color);
+      padding: 40px;
+      transition: all 0.3s ease;
+      animation: fadeIn 0.8s forwards;
+    }
+    
+    .info-container:hover {
+      box-shadow: 15px 15px 25px var(--shadow-color), 
+                 -15px -15px 25px var(--highlight-color);
+    }
+    
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

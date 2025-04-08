@@ -1,0 +1,99 @@
+<!-- 
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣶⠛⠛⠛⠛⠷⣶⣤⣀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⠟⠁⠈⢳⡀⢀⣠⣴⡿⠿⠛⠁⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡞⠁⠀⠀⠀⠀⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡾⠀⢀⣠⣤⣄⢸⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⠁⠀⣾⠋⠈⠹⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⢸⡏⠀⠀⢻⡆⠀⠀⢹⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⢸⡇⠀⠀⢸⡇⠀⠀⠈⣿⣿⣿⠀⠀⠀⠀⠀⠀esthevan was here :D
+⠀⠀⠀⠀⠀⠀⠀⠀⢸⡇⠀⠀⢸⣇⠀⠀⠀⣿⣿⡿⠀⠀⠀⠀i use linux. i like making things from scratch. 
+⠀⠀⠀⠀⠀⠀⠀⠀⢸⡇⠀⠀⢸⣿⠀⠀⢠⣿⣿⡇⠀i'm a beginner, but i love pushing myself.
+⠀⠀⠀⠀⠀⠀⠀⠀⠸⣷⠀⠀⠈⣿⠀⢀⣾⣿⣿⠀⠀⠀⠀no drag n' drop here. just code & curiosity.
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⡀⠀⠀⠻⢶⣿⣿⣿⡇⠀⠀⠀⠀learning by doing. that’s how i roll.
+⠀⠀⠀⠀⠀⠀⠀⢀⣤⡾⠃⠀⠀⠀⠈⣿⣿⣿⠁⠀⠀⠀⠀ 
+⠀⠀⠀⠀⠀⢠⣶⣯⣤⣤⣤⣤⡴⠶⠶⣼⣿⣿⣷⣤⣀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠉⠁⠀⠀
+-->
+
+
+
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>"Ó" de OpenSource.</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="intro-screen" class="intro-screen">
+    <div class="intro-content">
+      <img id="tux-intro" class="tux-intro" src="https://www.pngplay.com/wp-content/uploads/13/Linux-Logo-Transparent-PNG.png" alt="Tux" width="150">
+      <h1 id="intro-message" class="intro-message">Seu estilo. Seu sistema. Seu Linux.</h1>
+      <div id="credits" class="credits">
+        <p>Criado por:</p>
+        <h3>Esthevan C. Tombini, João Marcelo, Thiago Barcellos & Lucas Cavalheiro Kirch</h3>
+      </div>
+      <button id="start-quiz-btn" class="btn btn-primary start-btn">Começar</button>
+    </div>
+  </div>
+
+  <div id="main-content" class="container d-none">
+    <header class="text-center my-5">
+      <img class="tux-logo" src="https://www.pngplay.com/wp-content/uploads/13/Linux-Logo-Transparent-PNG.png" alt="Linux Logo" width="80" height="80">
+      <h1 class="display-4 mt-3">Por que não o Tux?</h1>
+      <p class="lead">Aqui você manda no sistema. Ou ele manda em você, se for Windows.</p>
+    </header>
+
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="quiz-container">
+          <div class="progress-container mb-4">
+            <div class="progress">
+              <div id="progress-bar" class="progress-bar" role="progressbar" style="width: 0%"></div>
+            </div>
+            <div class="step-counter">
+              <span id="current-step">1</span>/<span id="total-steps">6</span>
+            </div>
+          </div>
+
+          <div class="question-container" id="question-container">
+          </div>
+
+          <div class="text-center mt-4">
+            <button id="prev-btn" class="btn btn-outline-primary me-2" disabled>Anterior</button>
+            <button id="next-btn" class="btn btn-primary">Próxima</button>
+            <button id="submit-btn" class="btn btn-success d-none">Ver Resultado</button>
+          </div>
+        </div>
+
+        <div id="result-container" class="result-container d-none">
+          <div class="distro-card">
+            <h2 class="text-center mb-4">Sua distribuição recomendada</h2>
+            <div id="distro-logo" class="text-center mb-3">
+            </div>
+            <h3 id="distro-name" class="text-center"></h3>
+            <p id="distro-description" class="text-center"></p>
+            <div class="text-center mt-4">
+              <button id="restart-btn" class="btn btn-primary">Começar Novamente</button>
+              <a href="open-source.html" class="btn btn-outline-primary mx-2">Saiba mais sobre Open Source</a>
+              <a href="escolhas.html" class="btn btn-outline-primary mx-2">Ver todas as distribuições</a>
+              <a href="https://github.com/username/linux-universe" class="btn btn-dark mt-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github me-1" viewBox="0 0 16 16">
+                  <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.7-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                </svg>
+                Tem interesse no código desse questionário?
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
